@@ -1,0 +1,29 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	    int summ = 0;
+        int n;
+        Scanner sc=new Scanner(System.in);
+
+        n = sc.nextInt();
+
+        int[] num = new int[1000000];
+        int[] sum = new int[1000000];
+
+        for(int i=0;i<n;i++){
+
+
+            num[i] = sc.nextInt();
+        }
+
+        for(int i=0;i<n;i++) {
+            summ += num[i];
+            sum[i]=summ;
+            System.out.println(sum[i]);
+
+        }
+
+        }
