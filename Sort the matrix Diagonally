@@ -1,0 +1,39 @@
+class Solution {
+public:
+   //using selection sort
+   
+   
+   vector<vector<int>> diagonalSort(vector<vector<int>>& mat) {
+        int n = mat.size();
+        int m = mat[0].size();
+        if(n==1||m==1)
+            return mat;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {                
+                int min1 = mat[i][j];
+                int rx = i,cx=j;
+                int x = i+1;
+                int y = j+1;
+                while(x<n&&y<m)
+                {
+                    if(mat[x][y]<min1)
+                    {
+                        rx = x;
+                        cx = y;
+                        min1 = mat[x][y];
+                    }
+                    x++;
+                    y++;
+                }
+                if(rx!=i)
+                {                    
+                    swap(mat[i][j], mat[rx][cx]);
+                }
+            }
+            //print(mat,n,m);
+        }        
+        return mat;
+    }
+};
